@@ -1,0 +1,22 @@
+meta {
+  name: add to favorites
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/favorites
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MjQyOTAxLCJleHAiOjE3MjgzMjkzMDF9.RgG8XWz0UJK1255w9Dn6KLu5AtJ-mlGt0L_VeNeohFM
+}
+
+body:json {
+  {
+    "id": 132,
+    "name": "ditto"
+  }
+}

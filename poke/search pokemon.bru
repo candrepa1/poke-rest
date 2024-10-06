@@ -1,0 +1,19 @@
+meta {
+  name: search pokemon
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3000/pokemon?filter[tupe]=ground
+  body: none
+  auth: none
+}
+
+params:query {
+  filter[tupe]: ground
+}
+
+headers {
+  authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzI4MjQyNDIwLCJleHAiOjE3MjgzMjg4MjB9.ibYUy7KZPClsgMvudWU3Po0Xs3ff2XbjHFEaEsXWUfk
+}

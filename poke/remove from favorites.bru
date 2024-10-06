@@ -1,0 +1,15 @@
+meta {
+  name: remove from favorites
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3000/favorites/25
+  body: none
+  auth: none
+}
+
+headers {
+  authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MjQyOTAxLCJleHAiOjE3MjgzMjkzMDF9.RgG8XWz0UJK1255w9Dn6KLu5AtJ-mlGt0L_VeNeohFM
+}

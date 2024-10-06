@@ -1,0 +1,22 @@
+meta {
+  name: create profile
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:3000/profile/1
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MjQzOTc1LCJleHAiOjE3MjgzMzAzNzV9.CQrYBcSz9CiwHKi6BN0gtp9mdoIG9us6a7g_gM6N54I
+}
+
+body:json {
+  {
+    "avatar_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.disneyplus.com%2Fes-mx%2Fseries%2Fsnowdrop%2F7E3RWgrSi59X&psig=AOvVaw2sVmZi8VjDbT81Tn3F3CS-&ust=1728330323534000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCH3qnC-ogDFQAAAAAdAAAAABAE",
+    "bio": "this is some random text that i randomly generated because this is a test"
+  }
+}
