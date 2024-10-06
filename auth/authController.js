@@ -57,8 +57,7 @@ const loginUser = async (req, res) => {
 };
 
 const authenticateToken = (req, res, next) => {
-  const token =
-    req.headers["authorization"] && req.headers["authorization"].split(" ")[1];
+  const token = req.headers["authorization"];
 
   if (!token) {
     return res.sendStatus(401);
