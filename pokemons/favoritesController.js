@@ -38,7 +38,7 @@ const getFavoritePokemons = async (req, res) => {
     const result = await pool.query(query, [userId]);
 
     if (result.rowCount === 0) {
-      res.status(200).json({ profile: [] });
+      return res.status(200).json([]);
     }
 
     res.status(200).json([result.rows]);
