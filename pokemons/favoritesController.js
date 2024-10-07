@@ -26,11 +26,33 @@ const addFavoritePokemon = async (req, res) => {
   }
 };
 
+const getFavoritePokemons = async (req, res) => {
+  const userId = req.user.id;
+  const query = `
+      SELECT pokemon_id, pokemon_name
+      FROM favorite_pokemons
+      WHERE user_id = $1;
+    `;
+
+  try {
+    const result = await pool.query(query, [userId]);
+
+    if (result.rowCount === 0) {
+      return res.status(200).json([]);
+    }
+
+    res.status(200).json([result.rows]);
+  } catch (error) {
+    console.error("Error adding Pokémon to favorites:", error);
+    res.status(500).json({ message: "Error adding Pokémon to favorites" });
+  }
+};
+
 const removeFavoritePokemon = async (req, res) => {
   const { id: pokemon_id } = req.params;
   const userId = req.user.id;
   const query = `
-      DELETE FROM favorite_pokemons 
+      DELETE FROM favorite_pokemons
       WHERE user_id = $1 AND pokemon_id = $2
     `;
 
@@ -53,5 +75,6 @@ const removeFavoritePokemon = async (req, res) => {
 
 module.exports = {
   addFavoritePokemon,
+  getFavoritePokemons,
   removeFavoritePokemon,
 };
